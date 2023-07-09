@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<form action="/signup/" method="post">
+
+    {% csrf_token %} 
+        <h2>Register</h2>
+        <div class="form-group" >
+             <label for="firstname">username</label>
+             <input type="text" class="form-control" name="username" id="username">
+        </div>
+<div class="form-group" >
+<label class="form-label">Cin</label>
+    <input type="text" class="form-control" name="Cin" id="Cin" >
+  </div>
+                    <div class="form-group">
+             <label for="lastname">Prénom</label>
+            <input type="text" class="form-control" name="Prenom" id="Prenom" >
+        </div>
+        <div class="form-group">
+             <label for="lastname">Nom</label>
+            <input type="text" class="form-control" name="Nom" id="Nom">
+        </div>
+        <div class="form-group">
+             <label for="email">Adresse électronique</label>
+             <input type="email" name="Email" id="Email" class="form-control" required>
+        </div>
+        <div class="form-group">
+             <label for="password">Mot de passe</label>
+             <input type="password" class="form-control" id="pass1" name="pass1">
+        </div>
+        <div class="form-group">
+             <label for="passwordcheck">Vérification du mot de passe</label>
+             <input type="password" class="form-control" id="pass2" name="pass2">
+        </div>
+<div class="form-group">
+<label for="role">Role:</label>
+<select name="role" id="role" class="form-control">
+  <option value="authoritaire">Authoritaire</option>
+  <option value="client">Client</option>
+</select>
+</div>
+        <button type="submit" class="btn btn-outline-info">Submit</button>
+  </form>
