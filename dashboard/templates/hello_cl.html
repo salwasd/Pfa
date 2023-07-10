@@ -20,11 +20,10 @@
         <strong>{{ message.tags }}</strong> {{ message }}
     </div>
 {% endfor %}
-<h2>Your Files</h2>
+<h2>make your demandes!</h2>
 {% for file in user_files %}
     <p>{{ file.file.url }}</p>
-{% empty %}
-    <p>No files uploaded</p>
+
 {% endfor %}
 <style>
     nav {

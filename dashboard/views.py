@@ -96,8 +96,16 @@ def hello_cl(request):
     return render(request, 'hello_cl.html', {'user_files': user_files})
 
 def hello_autho(request):
-    user_files = UserFile.objects.filter(utilisateurs__is_client=True)
-    return render(request, 'hello_autho.html', {'user_files': user_files})
+    clients = Utilisateur.objects.filter(is_client=True)  # Get all clients
+    
+    client_files = {}  # Dictionary to store client files as {client: [files]}
+    
+    for client in clients:
+        files_uploaded = UserFile.objects.filter(clients=client)
+        client_files[client] = files_uploaded
+    
+    return render(request, 'hello_autho.html', {'client_files': client_files})
+
 
 def import_file(request):
     context = {'form': UserFileForm()}
